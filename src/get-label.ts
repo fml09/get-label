@@ -15,5 +15,5 @@ export const getLabel = async (options: Options): Promise<string> => {
     data: {labels}
   } = await octokit.rest.pulls.get({...rest})
 
-  return labels.map(label => label.name).join(', ')
+  return labels.map(label => label.name).join(',')
 }

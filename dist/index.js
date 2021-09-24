@@ -31,7 +31,7 @@ exports.getLabel = void 0;
 const getLabel = (options) => __awaiter(void 0, void 0, void 0, function* () {
     const { octokit } = options, rest = __rest(options, ["octokit"]);
     const { data: { labels } } = yield octokit.rest.pulls.get(Object.assign({}, rest));
-    return labels.map(label => label.name).join(', ');
+    return labels.map(label => label.name).join(',');
 });
 exports.getLabel = getLabel;
 
@@ -88,6 +88,7 @@ function run() {
                 pull_number: Number(core.getInput('pull_number')) || ((_a = github_1.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.number) ||
                     github_1.context.issue.number
             });
+            core.info(result);
             core.setOutput('labels', result);
         }
         catch (error) {

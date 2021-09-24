@@ -17,6 +17,7 @@ async function run(): Promise<void> {
         context.issue.number
     })
 
+    core.info(result)
     core.setOutput('labels', result)
   } catch (error) {
     core.setFailed(error.message)
