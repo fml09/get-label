@@ -19,7 +19,7 @@ async function run(): Promise<void> {
 
     core.info(result)
     core.setOutput('labels', result)
-  } catch (error) {
+  } catch (error: any){
     core.setFailed(error.message)
   }
 }
